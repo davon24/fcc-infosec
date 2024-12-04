@@ -3,12 +3,13 @@ const app = express();
 const helmet = require('helmet');
 const frameguard = require('frameguard');
 const xXssProtection = require('x-xss-protection');
+const dontSniffMimetype = require("dont-sniff-mimetype");
 
 // enabling helmetjs
 app.use(helmet.hidePoweredBy());
 app.use(frameguard({ action: 'deny' }));
 app.use(xXssProtection());
-
+app.use(dontSniffMimetype());
 
 
 
