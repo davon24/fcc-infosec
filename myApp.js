@@ -3,7 +3,11 @@ const app = express();
 const helmet = require('helmet');
 
 // enabling helmetjs
-app.use(helmet())
+app.use(
+	helmet({
+		xPoweredBy:false,
+	})
+);
 
 
 
