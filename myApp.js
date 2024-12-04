@@ -2,11 +2,12 @@ const express = require('express');
 const app = express();
 const helmet = require('helmet');
 const frameguard = require('frameguard');
+const xXssProtection = require('x-xss-protection');
 
 // enabling helmetjs
 app.use(helmet.hidePoweredBy());
 app.use(frameguard({ action: 'deny' }));
-
+app.use(xXssProtection());
 
 
 
